@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <Todos></Todos>
+  <div class="container py-3">
+    <Todos v-bind:todos="listTodos" @delete-item="deleteFromArray"></Todos>
   </div>
 </template>
 
@@ -11,6 +11,42 @@ export default {
   name: 'App',
   components: {
     Todos
+  },
+  methods: {
+    deleteFromArray: function(id) {
+      this.listTodos = this.listTodos.filter((todo) => todo.id != id);
+    }
+  },
+  data() {
+    return {
+      listTodos: [
+        {
+          id: 1,
+          title: 'Todo One',
+          completed: false
+        },
+        {
+          id: 2,
+          title: 'Todo Two',
+          completed: true
+        },
+        {
+          id: 3,
+          title: 'Todo Three',
+          completed: true
+        },
+        {
+          id: 4,
+          title: 'Todo four',
+          completed: false
+        },
+        {
+          id: 5,
+          title: 'Todo Five',
+          completed: true
+        }
+      ]
+    }
   }
 }
 </script>
