@@ -1,5 +1,8 @@
 # todolist-122020
 
+## Build App for Production
+todo-3wa-122020.surge.sh
+
 ## Project setup
 ```
 yarn install
