@@ -1,12 +1,17 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div>
+    <Navbar></Navbar>
+    <router-view class="container py-3"/>
   </div>
 </template>
+<script>
+import Navbar from './components/Navbar'
+export default {
+  components: {
+    Navbar
+  }
+}
+</script>
 
 <style>
 
